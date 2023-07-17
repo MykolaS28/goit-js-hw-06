@@ -13,20 +13,24 @@ const formSubmit = document.querySelector(".login-form");
 
 formSubmit.addEventListener("submit", onSubmit);
 
-const addForm = {};
+
 function onSubmit(event) {
     event.preventDefault();
 
     const {elements: { email, password}
     } = event.currentTarget;
 
-    if (email.value === "" || password.value === ""){
-        alert(`all fields must be filled`)
-    } else {
-        addForm.email = email.value;
-        addForm.password = password.value;
+    if (email.value.trim() === "" || password.value.trim() === ""){
+       return alert(`all fields must be filled`)
+    } 
+    const addForm = {
+        email: email.value,
+        password: password.value
+    };
+        // addForm.email = email.value;
+        // addForm.password = password.value;
         console.log(addForm)
         event.currentTarget.reset();
-    }
+    
     
 }

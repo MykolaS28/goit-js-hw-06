@@ -7,13 +7,22 @@
 // Для додавання стилів використовуй CSS-класи valid і invalid, які ми вже додали у вихідні файли завдання.
 
 const inputEl = document.getElementById("validation-input");
+inputEl.addEventListener("blur", () => 
+inputEl.value.length === Number(inputEl.dataset.length) ? listAdd("valid", "invalid") : listAdd("invalid", "valid"));
 
-inputEl.addEventListener("blur", () => {
-  if (inputEl.value.length == 6) {
-    inputEl.classList.add("valid");
-    inputEl.classList.remove("invalid");
-  } else if (inputEl.value.length != 6) {
-    inputEl.classList.add("invalid");
-    inputEl.classList.remove("valid");
-  }
-});
+function listAdd(a,b) {
+  inputEl.classList.add(a);
+  inputEl.classList.remove(b);
+}
+
+
+
+// inputEl.addEventListener("blur", () => {
+//   if (inputEl.value.length == 6) {
+//     inputEl.classList.add("valid");
+//     inputEl.classList.remove("invalid");
+//   } else if (inputEl.value.length != 6) {
+//     inputEl.classList.add("invalid");
+//     inputEl.classList.remove("valid");
+//   }
+// });
