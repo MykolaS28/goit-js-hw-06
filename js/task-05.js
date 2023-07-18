@@ -7,5 +7,5 @@ const nameOut = document.getElementById("name-output");
 
 
 nameIn.addEventListener("input", () => {
-    nameOut.textContent = nameIn.value.trip() || "Anonymous";
+    nameOut.textContent = nameIn.value.trim() || "Anonymous";
 });
